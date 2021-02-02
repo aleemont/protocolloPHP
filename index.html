@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Protocollo</title>
+ <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+ <meta name = "author" content = "Alighieri Lorenzo - Monticelli Alessandro">
+ <meta name = "description" content = "Form per l'invio di informazioni su una circolare da protocollare">
+ <meta charset = "UTF-8">
+</head>
+<style>
+ @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+ 
+ #feedback-page{
+ 	text-align:center;
+ }
+ 
+ #form-main{
+ 	width:100%;
+ 	float:left;
+ 	padding-top:0px;
+ }
+ 
+ #form-div {
+ 	background-color:rgba(72,72,72,0.4);
+ 	padding-left:35px;
+ 	padding-right:35px;
+ 	padding-top:35px;
+ 	padding-bottom:50px;
+ 	width: 450px;
+ 	float: left;
+ 	left: 50%;
+ 	position: absolute;
+   margin-top:30px;
+ 	margin-left: -260px;
+   -moz-border-radius: 7px;
+   -webkit-border-radius: 7px;
+ }
+ 
+ .feedback-input {
+ 	color:#817575;
+ 	font-family: Helvetica, Arial, sans-serif;
+    font-weight:500;
+ 	font-size: 18px;
+ 	border-radius: 0;
+ 	line-height: 22px;
+ 	background-color: #fbfbfb;
+ 	padding: 13px 13px 13px 20px;
+ 	margin-bottom: 10px;
+ 	width:100%;
+ 	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	-ms-box-sizing: border-box;
+ 	box-sizing: border-box;
+   border: 3px solid rgba(0,0,0,0);
+ }
+ 
+ .feedback-input:focus{
+ 	background: #fff;
+ 	box-shadow: 0;
+ 	border: 3px solid #3498db;
+ 	color: #3498db;
+ 	outline: none;
+   padding: 13px 13px 13px 20px;
+ }
+ 
+ .focused{
+ 	color:#30aed6;
+ 	border:#30aed6 solid 3px;
+ }
+ 
+ input:hover, input:focus,{
+ 	background-color:white;
+ }
+ 
+ #button-blue{
+ 	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+ 	float:left;
+ 	width: 100%;
+ 	border: #fbfbfb solid 4px;
+ 	cursor:pointer;
+ 	background-color: #3498db;
+ 	color:white;
+ 	font-size:12px;
+ 	padding-top:11px;
+ 	padding-bottom:11px;
+ 	-webkit-transition: all 0.3s;
+ 	-moz-transition: all 0.3s;
+ 	transition: all 0.3s;
+    margin-top:-4px;
+    font-weight:700;
+ }
+ 
+ #button-blue:hover{
+ 	background-color: rgba(0,0,0,0);
+ 	color: #0493bd;
+ }
+ 	
+ .submit:hover {
+ 	color: #3498db;
+ }
+ 	
+ .ease {
+ 	width: 0px;
+ 	height: 37px;
+ 	background-color: #fbfbfb;
+ 	-webkit-transition: .3s ease;
+ 	-moz-transition: .3s ease;
+ 	-o-transition: .3s ease;
+ 	-ms-transition: .3s ease;
+ 	transition: .3s ease;
+ }
+ 
+ .submit:hover .ease{
+   width:100%;
+   background-color:white;
+ }
+
+ label{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+ 	color:#fff;
+ 	
+ }
+ 
+ @media only screen and (max-width: 580px) {
+ 	#form-div{
+ 		left: 3%;
+ 		margin-right: 3%;
+ 		width: 88%;
+ 		margin-left: 0;
+ 		padding-left: 3%;
+ 		padding-right: 3%;
+ 	}
+ }
+</style>
+
+<body>
+<div>
+  <div>
+    <form action="protocollo.php" method="POST"
+      <p>
+        <input name="obj" type="text" placeholder="Oggetto" required>
+      </p> 
+      <p>
+        <input name="ufficio" list="uffici" placeholder="Ufficio">
+		<datalist id="uffici">     
+            <option value="Segreteria Alunni">
+            <option value="Segreteria Generale">
+            <option value="Segreteria Docenti">
+            <option value="Presidenza">
+        </datalist>
+      </p>      
+      <p>
+        <input type="radio" name="io" value="entrata" required><label>Entrata</label><br>
+        <input type="radio" name="io" value="uscita"><label>Uscita</label>
+      </p>
+      <div>
+        <input type="submit" value="INVIA">
+        <div></div>
+      </div>
+    </form>
+  </div>
+  </div>
+</body>
+</html>
